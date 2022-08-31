@@ -6,14 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body>
-    Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount / person Total / person Reset
+    <div class="overall">
+      <p class="overall__heading">SPLITTER</p>
+      <main class="main">
+        <section class="main__first">
+          <div>
+            <label for="bill">Bill</label>
+            <input type="number" name="bill" id="bill" value="0" />
+          </div>
+          <div>
+            <p>Select Tip %</p>
+            <button>5%</button>
+            <button>10%</button>
+            <button>15%</button>
+            <button>25%</button>
+            <button>50%</button>
+            <button>Custom</button>
+          </div>
+          <div>
+            <label for="num-of-people">Number of People</label>
+            <input type="number" name="num-of-people" id="num-of-people" value="0" />
+          </div>
+        </section>
+        <section class="main__second">
+          <div>
+            <div>
+              <p>Tip Amount</p>
+              <p>/ person</p>
+            </div>
+            <div>
+              <p>$00.00</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>Total</p>
+              <p>/ person</p>
+            </div>
+            <div>
+              <p>$00.00</p>
+            </div>
+          </div>
+          <button type="button">RESET</button>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

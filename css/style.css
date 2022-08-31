@@ -1,1 +1,1 @@
-*,*::after,*::before{padding:0;margin:0;box-sizing:border-box}
+*,*::after,*::before{padding:0;margin:0;box-sizing:border-box}body{display:grid;height:100vh;place-items:center;font-family:"Space Mono",monospace}.overall{outline:1px solid red}.overall__heading{outline:1px solid red}.overall main{display:flex}
