@@ -36,7 +36,7 @@ body {
   }
   main {
     display: flex;
-    background-color: $white;
+    background-color: $very-light-grayish-cyan;
     .main__first {
       outline: 1px solid red;
       &__container {
@@ -46,7 +46,7 @@ body {
         &__btns-container {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 5%;
+          gap: 1rem 5%;
           button {
             outline: 1px solid red;
           }
@@ -63,6 +63,15 @@ body {
     }
     .main__second {
       outline: 1px solid red;
+      margin: 2rem;
+      background-color: $very-dark-cyan;
+      &__container {
+        outline: 1px solid red;
+        margin: 2rem;
+        display: flex;
+        justify-content: space-between;
+        // column-gap: 10rem;
+      }
     }
   }
 }
