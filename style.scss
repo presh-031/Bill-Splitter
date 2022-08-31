@@ -16,6 +16,7 @@ body {
   place-items: center;
   font-family: $space-mono;
   font-weight: 700;
+  background-color: $light-grayish-cyan;
 }
 .overall {
   outline: 1px solid red;
@@ -35,17 +36,33 @@ body {
   }
   main {
     display: flex;
+    background-color: $white;
     .main__first {
       outline: 1px solid red;
       &__container {
         outline: 2px solid blue;
         margin-bottom: 2rem;
+        // width: 80%;
+        &__btns-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 5%;
+          button {
+            outline: 1px solid red;
+          }
+        }
         &__label {
           display: block;
           font-size: 1rem;
           margin-bottom: 0.8rem;
         }
-      }u
+        input {
+          width: 100%;
+        }
+      }
+    }
+    .main__second {
+      outline: 1px solid red;
     }
   }
 }
