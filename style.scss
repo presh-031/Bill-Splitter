@@ -36,41 +36,79 @@ body {
   }
   main {
     display: flex;
-    background-color: $very-light-grayish-cyan;
+    background-color: $white;
+    border-radius: 12px;
+    outline: 1px solid red;
     .main__first {
       outline: 1px solid red;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
       &__container {
-        outline: 2px solid blue;
-        margin-bottom: 2rem;
-        // width: 80%;
         &__btns-container {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 1rem 5%;
           button {
-            outline: 1px solid red;
+            // outline: 1px solid red;
+            border: none;
+            font-family: $space-mono;
+            padding: 0.2rem 0;
+            color: $very-light-grayish-cyan;
+            background-color: $very-dark-cyan;
+            border-radius: 3px;
+          }
+          .custom-btn {
+            background-color: $very-light-grayish-cyan;
+            color: $dark-grayish-cyan;
+            font-size: 1.2rem;
           }
         }
         &__label {
           display: block;
-          font-size: 1rem;
-          margin-bottom: 0.8rem;
+          // outline: 1px solid red;
+          color: $dark-grayish-cyan;
+          font-size: 0.8rem;
+          margin-bottom: 0.2rem;
         }
         input {
           width: 100%;
+          outline: none;
+          border: none;
+          background-color: $very-light-grayish-cyan;
+          padding: 0.2rem 1rem;
+          font-family: $space-mono;
         }
       }
     }
     .main__second {
       outline: 1px solid red;
-      margin: 2rem;
+      border-radius: 12px;
+      margin: 1.8rem;
+      text-align: center;
       background-color: $very-dark-cyan;
       &__container {
         outline: 1px solid red;
         margin: 2rem;
         display: flex;
         justify-content: space-between;
-        // column-gap: 10rem;
+        column-gap: 5rem;
+        color: $very-light-grayish-cyan;
+      }
+      button {
+        outline: 1px solid red;
+        display: inline-block;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        width: 80%;
+        border: none;
+        background-color: $strong-cyan;
+        font-family: $space-mono;
+        padding: 0.5rem 0;
+        border-radius: 3px;
+        color: $very-dark-cyan;
+        font-weight: 700;
       }
     }
   }
