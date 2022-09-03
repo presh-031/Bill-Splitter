@@ -4,14 +4,22 @@
     <meta charset="UTF-8" />
     <!-- displays site properly based on user's device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
     <title>Frontend Mentor | Tip calculator app</title>
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="overall">
@@ -20,22 +28,29 @@
         <section class="main__first">
           <div class="main__first__container">
             <label for="bill" class="main__first__container__label">Bill</label>
-            <input type="number" name="bill" id="bill" value="0" />
+            <input type="text" name="bill" id="bill" placeholder="0" />
           </div>
           <div class="main__first__container">
             <p class="main__first__container__label">Select Tip %</p>
             <div class="main__first__container__btns-container">
-              <button>5%</button>
-              <button>10%</button>
-              <button>15%</button>
-              <button>25%</button>
-              <button>50%</button>
-              <button class="custom-btn">Custom</button>
+              <button class="tips-percentage">5%</button>
+              <button class="tips-percentage">10%</button>
+              <button class="tips-percentage">15%</button>
+              <button class="tips-percentage">25%</button>
+              <button class="tips-percentage">50%</button>
+              <input type="text" placeholder="custom" class="custom" />
             </div>
           </div>
           <div class="main__first__container">
-            <label for="num-of-people" class="main__first__container__label">Number of People</label>
-            <input type="number" name="num-of-people" id="num-of-people" value="0" />
+            <label for="num-of-people" class="main__first__container__label"
+              >Number of People</label
+            >
+            <input
+              type="text"
+              name="num-of-people"
+              id="num-of-people"
+              placeholder="0"
+            />
           </div>
         </section>
         <section class="main__second">
@@ -61,5 +76,6 @@
         </section>
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
