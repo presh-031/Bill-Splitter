@@ -1,43 +1,57 @@
 'use strict';
+
+getBill();
 getTipPercentage();
 getCustomTip();
 getNumOfPeople();
-getBill();
 
 function getTipPercentage() {
   const possibleTips = document.querySelectorAll('.tips-percentage');
-  let selectedTip = '';
-
   for (let i = 0; i < possibleTips.length; i++) {
     possibleTips[i].addEventListener('click', e => {
-      selectedTip = e.target.innerHTML;
-      console.log(selectedTip);
+      calculateTipPerPerson(e.target.innerHTML);
     });
   }
 }
+
 function getCustomTip() {
-  let customTipInput = document.querySelector('.custom');
-  let customTip = '';
-  customTipInput.addEventListener('change', () => {
-    customTip = customTipInput.value;
-    console.log(customTip);
-  });
+  const customTipInput = document.querySelector('.custom');
+  customTipInput.addEventListener('input', calculateTipPerPerson);
 }
 
 function getNumOfPeople() {
   const numOfPeopleInput = document.querySelector('#num-of-people');
-  let numOfPeople = '';
-  numOfPeopleInput.addEventListener('change', () => {
-    numOfPeople = numOfPeopleInput.value;
-    console.log(numOfPeople);
-  });
+  numOfPeopleInput.addEventListener('input', calculateTipPerPerson);
 }
 
 function getBill() {
   const billInput = document.querySelector('#bill');
-  let bill = '';
-  billInput.addEventListener('change', () => {
-    bill = billInput.value;
-    console.log(bill);
-  });
+  billInput.addEventListener('input', calculateTipPerPerson);
 }
+
+function calculateTipPerPerson(selectedTip) {
+  const bill = +document.querySelector('#bill').value;
+  const numOfPeople = +document.querySelector('#num-of-people').value;
+  const customTip = +document.querySelector('.custom').value;
+  // console.log(bill);
+  // console.log(numOfPeople);
+  // console.log(customTip);
+
+  // console.log(selectedTip);
+
+  if (customTip && bill && numOfPeople) {
+    const tipPerPerson = ((customTip / 100) * bill) / numOfPeople;
+    const totalPerPerson = ((customTip / 100) * bill + bill) / numOfPeople;
+    // console.log(tipPerPerson);
+    // console.log(totalPerPerson);
+    document.querySelector('.tip-per-person').innerHTML = tipPerPerson;
+    document.querySelector('.total-per-person').innerHTML = totalPerPerson;
+  }
+}
+
+// When reset is clicked, all fields should return to default
+document.querySelector('.reset').addEventListener('click', () => {
+  document.querySelector('#bill').value = '';
+  document.querySelector('#num-of-people').value = '';
+  document.querySelector('.custom').value = '';
+});
