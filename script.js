@@ -1,5 +1,4 @@
 'use strict';
-
 const possibleTips = document.querySelectorAll('.tips-percentage');
 const customTipInput = document.querySelector('.custom');
 const numOfPeopleInput = document.querySelector('#num-of-people');

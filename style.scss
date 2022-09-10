@@ -136,3 +136,24 @@ body {
   background-color: $strong-cyan;
   color: $very-dark-cyan;
 }
+
+// Footer
+footer {
+  padding: 1.9rem;
+  font-size: 2rem;
+  text-align: center;
+  background-color: #504ca1;
+  color: #fff;
+  a {
+    color: inherit;
+    cursor: pointer;
+  }
+  .fa-github {
+    font-size: inherit;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  .fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
