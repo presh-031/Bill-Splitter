@@ -5,27 +5,14 @@ const customTipInput = document.querySelector('.custom');
 const numOfPeopleInput = document.querySelector('#num-of-people');
 const billInput = document.querySelector('#bill');
 const tipsPercentageBtns = document.querySelectorAll('.tips-percentage');
-// const values = {
-//   billNum: 0,
-//   numOfPeopleNum: 0,
-// };
 
-// billInput.addEventListener('input', getBillValue);
 function getBillValue() {
   const bill = billInput.value;
-  // console.log(bill);
-  // values.billNum = bill;
-  // console.log(values);
-  // console.log(bill);
   return +bill;
 }
 
-// numOfPeopleInput.addEventListener('input', getNumofPeople);
 function getNumOfPeople() {
   const numOfPeople = numOfPeopleInput.value;
-  // values.numOfPeopleNum = numOfPeople;
-
-  // console.log(values);
   return +numOfPeople;
 }
 
@@ -34,52 +21,46 @@ function getCustomTipPercentage() {
   return +customTipPercentage;
 }
 
-function calculate(bill, numOfPeople, customTip) {
-  let tipPerPerson = document.querySelector('.tip-per-person');
-  let totalPerPerson = document.querySelector('.total-per-person');
-  if (bill && numOfPeople && customTip) {
-    console.log(bill);
-    console.log(numOfPeople);
-    console.log(customTip);
-
-    tipPerPerson.innerHTML = (((customTip / 100) * bill) / numOfPeople).toFixed(
-      2
-    );
-    totalPerPerson.innerHTML = (
-      ((customTip / 100) * bill + bill) /
-      numOfPeople
-    ).toFixed(2);
-  } else {
-    console.log('ugh');
-  }
-}
-function callCalculateWithCustom() {
+function callCalculateWithCustomTip() {
   calculate(getBillValue(), getNumOfPeople(), getCustomTipPercentage());
 }
 
-// Tips percentage buttons
+function calculate(bill, numOfPeople, tip) {
+  let tipPerPerson = document.querySelector('.tip-per-person');
+  let totalPerPerson = document.querySelector('.total-per-person');
+  if (bill && numOfPeople && tip) {
+    tipPerPerson.innerHTML = (((tip / 100) * bill) / numOfPeople).toFixed(2);
+    totalPerPerson.innerHTML = (
+      ((tip / 100) * bill + bill) /
+      numOfPeople
+    ).toFixed(2);
+  }
+}
 
-function callCalculateWithFixed(fixedTipPercentage) {
+// Tips percentage buttons
+function callCalculateWithFixedTip(fixedTipPercentage) {
   calculate(getBillValue(), getNumOfPeople(), fixedTipPercentage);
 }
 
 ///////// Event Listeners
-// Tips percentage btns
-tipsPercentageBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    callCalculateWithFixed(btn.innerHTML.slice(0, -1));
-  });
-});
 // bill-input
 billInput.addEventListener('input', () => {
-  callCalculateWithCustom(), callCalculateWithFixed();
+  callCalculateWithCustomTip();
+  callCalculateWithFixedTip();
+});
+// Tips percentage btns
+// Get fixed tip percentage
+tipsPercentageBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    callCalculateWithFixedTip(btn.innerHTML.slice(0, -1));
+  });
 });
 // customtip-input
 customTipInput.addEventListener('input', () => {
-  callCalculateWithCustom();
+  callCalculateWithCustomTip();
 });
 //  num-of-people sharing-input
 numOfPeopleInput.addEventListener('input', () => {
-  callCalculateWithCustom();
-  callCalculateWithFixed();
+  callCalculateWithCustomTip();
+  callCalculateWithFixedTip();
 });
