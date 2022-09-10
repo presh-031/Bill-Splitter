@@ -1,57 +1,51 @@
 'use strict';
 
-getBill();
-getTipPercentage();
-getCustomTip();
-getNumOfPeople();
+const possibleTips = document.querySelectorAll('.tips-percentage');
+const customTipInput = document.querySelector('.custom');
+const numOfPeopleInput = document.querySelector('#num-of-people');
+const billInput = document.querySelector('#bill');
 
-function getTipPercentage() {
-  const possibleTips = document.querySelectorAll('.tips-percentage');
-  for (let i = 0; i < possibleTips.length; i++) {
-    possibleTips[i].addEventListener('click', e => {
-      calculateTipPerPerson(e.target.innerHTML);
-    });
-  }
-}
+// const values = {
+//   billNum: 0,
+//   numOfPeopleNum: 0,
+// };
 
-function getCustomTip() {
-  const customTipInput = document.querySelector('.custom');
-  customTipInput.addEventListener('input', calculateTipPerPerson);
-}
-
-function getNumOfPeople() {
-  const numOfPeopleInput = document.querySelector('#num-of-people');
-  numOfPeopleInput.addEventListener('input', calculateTipPerPerson);
-}
-
-function getBill() {
-  const billInput = document.querySelector('#bill');
-  billInput.addEventListener('input', calculateTipPerPerson);
-}
-
-function calculateTipPerPerson(selectedTip) {
-  const bill = +document.querySelector('#bill').value;
-  const numOfPeople = +document.querySelector('#num-of-people').value;
-  const customTip = +document.querySelector('.custom').value;
+// billInput.addEventListener('input', getBillValue);
+function getBillValue() {
+  const bill = billInput.value;
   // console.log(bill);
-  // console.log(numOfPeople);
-  // console.log(customTip);
-
-  // console.log(selectedTip);
-
-  if (customTip && bill && numOfPeople) {
-    const tipPerPerson = ((customTip / 100) * bill) / numOfPeople;
-    const totalPerPerson = ((customTip / 100) * bill + bill) / numOfPeople;
-    // console.log(tipPerPerson);
-    // console.log(totalPerPerson);
-    document.querySelector('.tip-per-person').innerHTML = tipPerPerson;
-    document.querySelector('.total-per-person').innerHTML = totalPerPerson;
-  }
+  // values.billNum = bill;
+  // console.log(values);
+  // console.log(bill);
+  return bill;
 }
 
-// When reset is clicked, all fields should return to default
-document.querySelector('.reset').addEventListener('click', () => {
-  document.querySelector('#bill').value = '';
-  document.querySelector('#num-of-people').value = '';
-  document.querySelector('.custom').value = '';
-});
+// numOfPeopleInput.addEventListener('input', getNumofPeople);
+function getNumOfPeople() {
+  const numOfPeople = numOfPeopleInput.value;
+  // values.numOfPeopleNum = numOfPeople;
+
+  // console.log(values);
+  return numOfPeople;
+}
+
+function getCustomTipPercentage() {
+  const customTipPercentage = customTipInput.value;
+  return customTipPercentage;
+}
+
+function calculate(bill, numOfPeople, customTip) {
+  let tipPerPerson = document.querySelector('.tip-per-person');
+  let totalPerPerson = document.querySelector('.total-per-person');
+  if (bill && numOfPeople && customTip) {
+    console.log(bill);
+    console.log(numOfPeople);
+    console.log(customTip);
+
+    tipPerPerson.innerHTML = ((customTip / 100) * bill) / numOfPeople;
+    totalPerPerson.innerHTML = ((customTip / 100) * bill + +bill) / numOfPeople;
+  }
+}
+function callCalculate() {
+  calculate(getBillValue(), getNumOfPeople(), getCustomTipPercentage());
+}

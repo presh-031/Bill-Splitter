@@ -28,7 +28,13 @@
         <section class="main__first">
           <div class="main__first__container">
             <label for="bill" class="main__first__container__label">Bill</label>
-            <input type="text" name="bill" id="bill" placeholder="0" />
+            <input
+              oninput=" callCalculate()"
+              type="text"
+              name="bill"
+              id="bill"
+              placeholder="0"
+            />
           </div>
           <div class="main__first__container">
             <p class="main__first__container__label">Select Tip %</p>
@@ -38,7 +44,12 @@
               <button class="tips-percentage">15%</button>
               <button class="tips-percentage">25%</button>
               <button class="tips-percentage">50%</button>
-              <input type="text" placeholder="custom" class="custom" />
+              <input
+                oninput="callCalculate()"
+                type="text"
+                placeholder="custom"
+                class="custom"
+              />
             </div>
           </div>
           <div class="main__first__container">
@@ -46,6 +57,7 @@
               >Number of People</label
             >
             <input
+              oninput=" callCalculate()"
               type="text"
               name="num-of-people"
               id="num-of-people"
