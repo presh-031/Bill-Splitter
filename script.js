@@ -49,28 +49,32 @@ function calculate(bill, numOfPeople, customTip) {
       ((customTip / 100) * bill + bill) /
       numOfPeople
     ).toFixed(2);
+  } else {
+    console.log('ugh');
   }
 }
 function callCalculate() {
-  calculate(
-    getBillValue(),
-    getNumOfPeople(),
-    getCustomTipPercentage(),
-    getFixedTipPercentage()
-  );
+  calculate(getBillValue(), getNumOfPeople(), getCustomTipPercentage());
 }
 
 // Tips percentage buttons
 const tipsPercentageBtns = document.querySelectorAll('.tips-percentage');
 tipsPercentageBtns.forEach(btn => {
-  console.log(btn);
+  // console.log(btn);
   btn.addEventListener('click', () => {
-    getFixedTipPercentage(btn.innerHTML.slice(0, -1));
+    callCalculateWithFixed(btn.innerHTML.slice(0, -1));
     // console.log(btn.innerHTML.slice(0, -1));
     // callCalculate(fixedTipPercentage)
   });
 });
 
-function getFixedTipPercentage(fixedTipPercentage) {
-  fixedTipPercentage;
+// function getFixedTipPercentage(fixedTipPercentage) {
+//   fixedTipPercentage;
+//   console.log(fixedTipPercentage);
+//   // return fixedTipPercentage;
+//   callCalculateWithFixed(fixedTipPercentage);
+// }
+
+function callCalculateWithFixed(fixedTipPercentage) {
+  calculate(getBillValue(), getNumOfPeople(), fixedTipPercentage);
 }
