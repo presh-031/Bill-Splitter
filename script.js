@@ -17,7 +17,7 @@ function getBillValue() {
   // values.billNum = bill;
   // console.log(values);
   // console.log(bill);
-  return bill;
+  return +bill;
 }
 
 // numOfPeopleInput.addEventListener('input', getNumofPeople);
@@ -26,12 +26,12 @@ function getNumOfPeople() {
   // values.numOfPeopleNum = numOfPeople;
 
   // console.log(values);
-  return numOfPeople;
+  return +numOfPeople;
 }
 
 function getCustomTipPercentage() {
   const customTipPercentage = customTipInput.value;
-  return customTipPercentage;
+  return +customTipPercentage;
 }
 
 function calculate(bill, numOfPeople, customTip) {
@@ -42,10 +42,35 @@ function calculate(bill, numOfPeople, customTip) {
     console.log(numOfPeople);
     console.log(customTip);
 
-    tipPerPerson.innerHTML = ((customTip / 100) * bill) / numOfPeople;
-    totalPerPerson.innerHTML = ((customTip / 100) * bill + +bill) / numOfPeople;
+    tipPerPerson.innerHTML = (((customTip / 100) * bill) / numOfPeople).toFixed(
+      2
+    );
+    totalPerPerson.innerHTML = (
+      ((customTip / 100) * bill + bill) /
+      numOfPeople
+    ).toFixed(2);
   }
 }
 function callCalculate() {
-  calculate(getBillValue(), getNumOfPeople(), getCustomTipPercentage());
+  calculate(
+    getBillValue(),
+    getNumOfPeople(),
+    getCustomTipPercentage(),
+    getFixedTipPercentage()
+  );
+}
+
+// Tips percentage buttons
+const tipsPercentageBtns = document.querySelectorAll('.tips-percentage');
+tipsPercentageBtns.forEach(btn => {
+  console.log(btn);
+  btn.addEventListener('click', () => {
+    getFixedTipPercentage(btn.innerHTML.slice(0, -1));
+    // console.log(btn.innerHTML.slice(0, -1));
+    // callCalculate(fixedTipPercentage)
+  });
+});
+
+function getFixedTipPercentage(fixedTipPercentage) {
+  fixedTipPercentage;
 }
