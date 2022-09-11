@@ -10,13 +10,22 @@
 :root {
   font-size: 62.5%;
 }
+html {
+  // footer support
+  // position: relative;
+  // min-height: 100%;
+}
+body {
+  background-color: $light-grayish-cyan;
+  // footer support
+  // margin-bottom: 100px;
+}
 body > div {
   display: grid;
   height: 100vh;
   place-items: center;
   font-family: $space-mono;
   font-weight: 700;
-  background-color: $light-grayish-cyan;
 }
 .overall {
   display: flex;
@@ -64,6 +73,7 @@ body > div {
             background-color: $very-light-grayish-cyan;
             color: $dark-grayish-cyan;
             font-size: 1.2rem;
+            text-align: right;
           }
         }
         &__label {
@@ -81,6 +91,7 @@ body > div {
           background-color: $very-light-grayish-cyan;
           padding: 1rem;
           font-family: $space-mono;
+          text-align: right;
         }
       }
     }
@@ -152,6 +163,11 @@ footer {
   background-color: $very-dark-cyan;
   color: #fff;
   font-family: $space-mono;
+  // footer at bottom of page
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  // width: 100%;
   a {
     color: inherit;
     cursor: pointer;
@@ -171,11 +187,13 @@ footer {
   body > div {
     display: flex;
     justify-content: center;
+    max-width: 450px;
+    margin: auto;
     // align-items: center;
     // border: 1px solid red;
   }
   .overall {
-    border: 10px solid red;
+    border: 1px solid red;
     width: 100%;
     &__heading {
       outline: 1px solid red;
@@ -185,23 +203,29 @@ footer {
       margin-bottom: 5rem;
     }
     main {
-      outline: 10px solid red;
+      outline: 1px solid red;
       height: auto;
       flex-direction: column;
+      align-items: center;
+
       .main__first {
-        outline: 5px solid red;
-        width: 100%;
+        // outline: 5px solid red;
+        width: 85%;
+        padding: 0;
+        padding: 2.5rem 0;
         &__container {
-          outline: 1px solid red;
+          // outline: 10px solid red;
+          margin-bottom: 4rem;
           &__btns-container {
-            outline: 5px solid red;
+            // outline: 5px solid red;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
+            gap: 2rem;
             button {
               outline: 1px solid red;
               padding: 1.3rem;
               font-size: 2.5rem;
               font-weight: 700;
+              border-radius: 5px;
             }
             .custom {
               font-size: 3rem;
@@ -209,16 +233,32 @@ footer {
           }
           &__label {
             font-size: 2rem;
+            margin-bottom: 1rem;
+          }
+          input {
+            outline: 1px solid red;
+            font-size: 2.5rem;
           }
         }
       }
       .main__second {
-        width: 100%;
+        width: 85%;
+        margin: 0;
+        // outline: 1px solid red;
+        margin-bottom: 2.5rem;
+        padding: 0;
+        padding: 4rem 2.5rem 2.5rem 2.5rem;
+        &__container {
+          // outline: 1px solid red;
+          // margin: 0;
+        }
+        button {
+          margin-top: 3rem;
+          font-size: 2.5rem;
+          border-radius: 5px;
+        }
       }
     }
   }
 }
-// //////
-/////////
-/// /////
 /// Add support for footer

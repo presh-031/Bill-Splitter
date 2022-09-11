@@ -33,7 +33,10 @@ function calculate(bill, numOfPeople, tip) {
       ((tip / 100) * bill + bill) /
       numOfPeople
     ).toFixed(2);
-  }
+  } // else {
+  //   tipPerPerson.innerHTML = '00.00';
+  //   totalPerPerson.innerHTML = '00.00';
+  // }
 }
 
 // Tips percentage buttons
@@ -56,12 +59,26 @@ tipsPercentageBtns.forEach(btn => {
     if (btn.click) {
       console.log(btn.innerHTML);
       // btn.style.backgroundColor = 'red';
-    } else {
-      console.log(`${btn}`);
-      // btn.style.backgroundColor = 'blue';
     }
+    console.log(`${btn}`);
+    // btn.style.backgroundColor = 'blue';
   });
 });
+// for (let i = 0; i < tipsPercentageBtns.length; i++) {
+//   tipsPercentageBtns[i].addEventListener('click', () => {
+//     let btn = tipsPercentageBtns[i];
+//     console.log(btn);
+
+//     if (btn.click) {
+//       console.log(btn.innerHTML);
+//       btn.style.backgroundColor = 'red';
+//     } else {
+//       btn.style.backgroundColor = 'blue';
+//     }
+//     console.log(`${btn}`);
+//   });
+//   tipsPercentageBtns[i].style.backgroundColor = 'blue';
+// }
 // customtip-input
 customTipInput.addEventListener('input', () => {
   callCalculateWithCustomTip();
