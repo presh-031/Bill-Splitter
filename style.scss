@@ -165,3 +165,11 @@ footer {
     transform: rotate(360deg) scale(1.2);
   }
 }
+
+// Media queries for smaller screens
+@media (max-width: 800px) {
+  .overall {
+    &__heading {
+    }
+  }
+}

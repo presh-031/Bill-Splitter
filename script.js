@@ -58,7 +58,7 @@ tipsPercentageBtns.forEach(btn => {
 customTipInput.addEventListener('input', () => {
   callCalculateWithCustomTip();
 });
-//  num-of-people sharing-input
+//  numofpeople sharing-input
 numOfPeopleInput.addEventListener('input', () => {
   callCalculateWithCustomTip();
   callCalculateWithFixedTip();
