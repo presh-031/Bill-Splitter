@@ -19,35 +19,34 @@ body > div {
   background-color: $light-grayish-cyan;
 }
 .overall {
-  outline: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 75rem;
   &__heading {
     margin-bottom: 4rem;
     display: inline-block;
-    width: 5rem;
+    width: 10rem;
     text-align: center;
     word-wrap: break-word;
-    // outline: 1px solid red;
-    line-height: 2rem;
+
+    line-height: 4rem;
     letter-spacing: 0.3rem;
-    font-size: 1.5rem;
+    font-size: 3rem;
     color: $dark-grayish-cyan;
   }
   main {
     display: flex;
     background-color: $white;
     border-radius: 12px;
-    // outline: 1px solid red;
+    height: 35rem;
     .main__first {
-      outline: 1px solid red;
       padding: 1rem 2rem;
       display: flex;
+      width: 50%;
       flex-direction: column;
       justify-content: space-around;
       &__container {
-        outline: 1px solid red;
         &__btns-container {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -60,7 +59,6 @@ body > div {
             color: $very-light-grayish-cyan;
             background-color: $very-dark-cyan;
             border-radius: 3px;
-            outline: 1px solid red;
           }
           .custom {
             background-color: $very-light-grayish-cyan;
@@ -70,32 +68,37 @@ body > div {
         }
         &__label {
           display: block;
-          // outline: 1px solid red;
+
           color: $dark-grayish-cyan;
-          font-size: 0.8rem;
+          font-size: 1.4rem;
           margin-bottom: 0.2rem;
         }
         input {
           width: 100%;
           outline: none;
+          // outline: 1px solid red;
           border: none;
           background-color: $very-light-grayish-cyan;
-          padding: 0.2rem 1rem;
+          padding: 1rem;
           font-family: $space-mono;
         }
       }
     }
     .main__second {
-      // outline: 1px solid red;
       border-radius: 12px;
       margin: 1.8rem;
+      padding: 2rem;
+      width: 45%;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       background-color: $very-dark-cyan;
       &__container {
-        // outline: 1px solid red;
-        margin: 2rem;
+        margin-bottom: 2rem;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         column-gap: 5rem;
         color: $very-light-grayish-cyan;
         .tip-info-box {
@@ -103,32 +106,33 @@ body > div {
           display: flex;
           flex-direction: column;
           justify-content: space-evenly;
+          p:nth-of-type(1) {
+            font-size: 2rem;
+          }
           p:nth-of-type(2) {
-            // outline: 1px solid red;
             color: $dark-grayish-cyan;
-            font-size: 0.8rem;
+            font-size: 1.2rem;
           }
         }
         .tip-amount-and-total {
-          // outline: 1px solid red;
           height: 100%;
-          font-size: 2.5rem;
+          font-size: 3rem;
           color: $strong-cyan;
         }
       }
       button {
-        // outline: 1px solid red;
         display: inline-block;
-        margin-top: 4rem;
-        margin-bottom: 2rem;
-        width: 80%;
+        // margin-top: 4rem;
+        // margin-bottom: 2rem;
+        width: 100%;
         border: none;
         background-color: $strong-cyan;
         font-family: $space-mono;
-        padding: 0.5rem 0;
+        padding: 1.5rem 0;
         border-radius: 3px;
         color: $very-dark-cyan;
         font-weight: 700;
+        cursor: pointer;
       }
     }
   }
@@ -147,6 +151,7 @@ footer {
   text-align: center;
   background-color: $very-dark-cyan;
   color: #fff;
+  font-family: $space-mono;
   a {
     color: inherit;
     cursor: pointer;
