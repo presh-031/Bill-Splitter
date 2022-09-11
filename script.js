@@ -56,12 +56,9 @@ tipsPercentageBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     callCalculateWithFixedTip(btn.innerHTML.slice(0, -1));
 
-    if (btn.click) {
-      console.log(btn.innerHTML);
-      // btn.style.backgroundColor = 'red';
-    }
-    console.log(`${btn}`);
-    // btn.style.backgroundColor = 'blue';
+    // one-liner solving the 'pressing on button at a time styles' issue.
+    tipsPercentageBtns.forEach(btn => btn.classList.remove('active'));
+    btn.classList.add('active');
   });
 });
 // for (let i = 0; i < tipsPercentageBtns.length; i++) {
