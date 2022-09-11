@@ -10,7 +10,7 @@
 :root {
   font-size: 62.5%;
 }
-body {
+body > div {
   display: grid;
   height: 100vh;
   place-items: center;
@@ -19,7 +19,7 @@ body {
   background-color: $light-grayish-cyan;
 }
 .overall {
-  // outline: 1px solid red;
+  outline: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,23 +41,26 @@ body {
     border-radius: 12px;
     // outline: 1px solid red;
     .main__first {
-      // outline: 1px solid red;
+      outline: 1px solid red;
       padding: 1rem 2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       &__container {
+        outline: 1px solid red;
         &__btns-container {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 1rem 5%;
+          // gap: 1rem 5%;
+          gap: 1rem 2rem;
           button {
             border: none;
             font-family: $space-mono;
-            padding: 0.2rem 0;
+            padding: 0.8rem 0;
             color: $very-light-grayish-cyan;
             background-color: $very-dark-cyan;
             border-radius: 3px;
+            outline: 1px solid red;
           }
           .custom {
             background-color: $very-light-grayish-cyan;
@@ -142,7 +145,7 @@ footer {
   padding: 1.9rem;
   font-size: 2rem;
   text-align: center;
-  background-color: #504ca1;
+  background-color: $very-dark-cyan;
   color: #fff;
   a {
     color: inherit;

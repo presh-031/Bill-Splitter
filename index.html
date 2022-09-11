@@ -27,63 +27,67 @@
     ></script>
   </head>
   <body>
-    <div class="overall">
-      <p class="overall__heading">SPLITTER</p>
-      <main class="main">
-        <section class="main__first">
-          <div class="main__first__container">
-            <label for="bill" class="main__first__container__label">Bill</label>
-            <input type="number" name="bill" id="bill" placeholder="0" />
-          </div>
-          <div class="main__first__container">
-            <p class="main__first__container__label">Select Tip %</p>
-            <div class="main__first__container__btns-container">
-              <button class="tips-percentage">5%</button>
-              <button class="tips-percentage">10%</button>
-              <button class="tips-percentage">15%</button>
-              <button class="tips-percentage">25%</button>
-              <button class="tips-percentage">50%</button>
-              <input type="number" placeholder="custom" class="custom" />
+    <div>
+      <div class="overall">
+        <p class="overall__heading">SPLITTER</p>
+        <main class="main">
+          <section class="main__first">
+            <div class="main__first__container">
+              <label for="bill" class="main__first__container__label"
+                >Bill</label
+              >
+              <input type="number" name="bill" id="bill" placeholder="0" />
             </div>
-          </div>
-          <div class="main__first__container">
-            <label for="num-of-people" class="main__first__container__label"
-              >Number of People</label
-            >
-            <input
-              type="number"
-              name="num-of-people"
-              id="num-of-people"
-              placeholder="0"
-            />
-          </div>
-        </section>
-        <section class="main__second">
-          <div class="main__second__container">
-            <div class="tip-info-box">
-              <p>Tip Amount</p>
-              <p>/ person</p>
+            <div class="main__first__container">
+              <p class="main__first__container__label">Select Tip %</p>
+              <div class="main__first__container__btns-container">
+                <button class="tips-percentage">5%</button>
+                <button class="tips-percentage">10%</button>
+                <button class="tips-percentage">15%</button>
+                <button class="tips-percentage">25%</button>
+                <button class="tips-percentage">50%</button>
+                <input type="number" placeholder="custom" class="custom" />
+              </div>
             </div>
-            <div>
-              <p class="tip-amount-and-total">
-                $<span class="tip-per-person">00.00</span>
-              </p>
+            <div class="main__first__container">
+              <label for="num-of-people" class="main__first__container__label"
+                >Number of People</label
+              >
+              <input
+                type="number"
+                name="num-of-people"
+                id="num-of-people"
+                placeholder="0"
+              />
             </div>
-          </div>
-          <div class="main__second__container">
-            <div class="tip-info-box">
-              <p>Total</p>
-              <p>/ person</p>
+          </section>
+          <section class="main__second">
+            <div class="main__second__container">
+              <div class="tip-info-box">
+                <p>Tip Amount</p>
+                <p>/ person</p>
+              </div>
+              <div>
+                <p class="tip-amount-and-total">
+                  $<span class="tip-per-person">00.00</span>
+                </p>
+              </div>
             </div>
-            <div>
-              <p class="tip-amount-and-total">
-                $<span class="total-per-person">00.00</span>
-              </p>
+            <div class="main__second__container">
+              <div class="tip-info-box">
+                <p>Total</p>
+                <p>/ person</p>
+              </div>
+              <div>
+                <p class="tip-amount-and-total">
+                  $<span class="total-per-person">00.00</span>
+                </p>
+              </div>
             </div>
-          </div>
-          <button type="button" class="reset">RESET</button>
-        </section>
-      </main>
+            <button type="button" class="reset">RESET</button>
+          </section>
+        </main>
+      </div>
     </div>
     <!-- Footer -->
     <footer>
