@@ -26,7 +26,7 @@ body > div {
   &__heading {
     margin-bottom: 4rem;
     display: inline-block;
-    width: 10rem;
+    width: 9rem;
     text-align: center;
     word-wrap: break-word;
 
@@ -168,8 +168,57 @@ footer {
 
 // Media queries for smaller screens
 @media (max-width: 800px) {
+  body > div {
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    // border: 1px solid red;
+  }
   .overall {
+    border: 10px solid red;
+    width: 100%;
     &__heading {
+      outline: 1px solid red;
+      line-height: 4.5rem;
+      letter-spacing: 0.8rem;
+      width: 12rem;
+      margin-bottom: 5rem;
+    }
+    main {
+      outline: 10px solid red;
+      height: auto;
+      flex-direction: column;
+      .main__first {
+        outline: 5px solid red;
+        width: 100%;
+        &__container {
+          outline: 1px solid red;
+          &__btns-container {
+            outline: 5px solid red;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            button {
+              outline: 1px solid red;
+              padding: 1.3rem;
+              font-size: 2.5rem;
+              font-weight: 700;
+            }
+            .custom {
+              font-size: 3rem;
+            }
+          }
+          &__label {
+            font-size: 2rem;
+          }
+        }
+      }
+      .main__second {
+        width: 100%;
+      }
     }
   }
 }
+// //////
+/////////
+/// /////
+/// Add support for footer

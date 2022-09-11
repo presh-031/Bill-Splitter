@@ -52,6 +52,14 @@ billInput.addEventListener('input', () => {
 tipsPercentageBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     callCalculateWithFixedTip(btn.innerHTML.slice(0, -1));
+
+    if (btn.click) {
+      console.log(btn.innerHTML);
+      // btn.style.backgroundColor = 'red';
+    } else {
+      console.log(`${btn}`);
+      // btn.style.backgroundColor = 'blue';
+    }
   });
 });
 // customtip-input
