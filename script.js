@@ -74,3 +74,4 @@ function calculate() {
 }
 
 // When reset is clicked, all values should return to initial states
+// validation
