@@ -19,13 +19,19 @@ function getBillValue() {
 numOfPeopleInput.addEventListener('input', getNumOfPeople);
 function getNumOfPeople() {
   people = numOfPeopleInput.value;
+  // console.log(typeof people);
 
-  calculate();
+  if (people === '0') {
+    alert('cant be zero');
+  } else {
+    calculate();
+  }
 }
 customTipInput.addEventListener('input', getCustomTipPercentage);
 function getCustomTipPercentage() {
   customTip = customTipInput.value;
   fixedTip = '';
+  tipsPercentageBtns.forEach(btn => btn.classList.remove('active'));
 
   calculate();
 }
@@ -37,10 +43,8 @@ tipsPercentageBtns.forEach(btn => {
     fixedTip = btn.innerHTML.slice(0, -1);
     customTip = '';
 
-    btn.classList.remove('active');
-    if (e.target.innerHTML === btn.innerHTML) {
-      btn.classList.add('active');
-    }
+    tipsPercentageBtns.forEach(btn => btn.classList.remove('active'));
+    btn.classList.add('active');
 
     calculate();
   });
@@ -68,3 +72,5 @@ function calculate() {
     ).toFixed(2);
   }
 }
+
+// When reset is clicked, all values should return to initial states

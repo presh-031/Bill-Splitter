@@ -26,6 +26,7 @@ body > div {
   place-items: center;
   font-family: $space-mono;
   font-weight: 700;
+  // border: 1px solid red;
 }
 .overall {
   display: flex;
@@ -84,7 +85,6 @@ body > div {
       }
       &__label {
         display: block;
-
         color: $dark-grayish-cyan;
         font-size: 1.4rem;
         margin-bottom: 0.2rem;
@@ -161,6 +161,7 @@ footer {
   text-align: center;
   background-color: $very-dark-cyan;
   color: #fff;
+  margin-top: 10rem;
   font-family: $space-mono;
   // footer at bottom of page
   // position: absolute;
@@ -184,78 +185,70 @@ footer {
 // Media queries for smaller screens
 @media (max-width: 800px) {
   body > div {
-    display: flex;
-    justify-content: center;
-    max-width: 450px;
-    margin: auto;
-    // align-items: center;
-    // border: 1px solid red;
+    display: grid;
+    height: auto;
+    place-items: center;
+    // outline: 10px solid red;
   }
   .overall {
-    border: 1px solid red;
     width: 100%;
+    padding-top: 4rem;
+    // border: 10px solid red;
     &__heading {
-      outline: 1px solid red;
-      line-height: 4.5rem;
-      letter-spacing: 0.8rem;
-      width: 12rem;
-      margin-bottom: 5rem;
     }
     main {
-      outline: 1px solid red;
-      height: auto;
+      padding: 2rem;
+      width: 100%;
+      max-width: 450px;
       flex-direction: column;
-      align-items: center;
-
+      height: auto;
       .main__first {
-        // outline: 5px solid red;
-        width: 85%;
-        padding: 0;
-        padding: 2.5rem 0;
-        &__container {
-          // outline: 10px solid red;
-          margin-bottom: 4rem;
-          &__btns-container {
-            // outline: 5px solid red;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            button {
-              outline: 1px solid red;
-              padding: 1.3rem;
-              font-size: 2.5rem;
-              font-weight: 700;
-              border-radius: 5px;
-            }
-            .custom {
-              font-size: 3rem;
-            }
-          }
-          &__label {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-          }
-          input {
-            outline: 1px solid red;
-            font-size: 2.5rem;
-          }
-        }
-      }
-      .main__second {
-        width: 85%;
-        margin: 0;
         // outline: 1px solid red;
-        margin-bottom: 2.5rem;
-        padding: 0;
-        padding: 4rem 2.5rem 2.5rem 2.5rem;
+        width: 100%;
         &__container {
           // outline: 1px solid red;
-          // margin: 0;
+          &__btns-container {
+            grid-template-columns: repeat(2, 1fr);
+            button {
+              padding: 1rem 0;
+              font-size: 2rem;
+              border-radius: 5px;
+            }
+          }
+          .custom {
+            font-size: 2rem;
+          }
         }
-        button {
-          margin-top: 3rem;
-          font-size: 2.5rem;
-          border-radius: 5px;
+        &__label {
+          font-size: 2rem;
+          margin-bottom: 0.2rem;
         }
+        input {
+        }
+      }
+    }
+    .main__second {
+      width: 100%;
+      margin: auto;
+      &__container {
+        // outline: 1px solid red;
+        margin-bottom: 3rem;
+        .tip-info-box {
+          // outline: 1px solid red;
+          p:nth-of-type(1) {
+            font-size: 2rem;
+          }
+          p:nth-of-type(2) {
+            color: $dark-grayish-cyan;
+            font-size: 1.2rem;
+          }
+        }
+        .tip-amount-and-total {
+        }
+      }
+      button {
+        font-size: 2rem;
+        padding: 1rem 0;
       }
     }
   }
