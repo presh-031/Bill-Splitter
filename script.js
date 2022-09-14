@@ -16,6 +16,7 @@ function getBillValue() {
 
   calculate();
 }
+
 numOfPeopleInput.addEventListener('input', getNumOfPeople);
 function getNumOfPeople() {
   people = numOfPeopleInput.value;
@@ -27,6 +28,7 @@ function getNumOfPeople() {
     calculate();
   }
 }
+
 customTipInput.addEventListener('input', getCustomTipPercentage);
 function getCustomTipPercentage() {
   customTip = customTipInput.value;
@@ -50,7 +52,6 @@ tipsPercentageBtns.forEach(btn => {
   });
 });
 
-console.log(bill);
 function calculate() {
   let tipPerPerson = document.querySelector('.tip-per-person');
   let totalPerPerson = document.querySelector('.total-per-person');
