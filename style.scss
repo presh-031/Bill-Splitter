@@ -71,92 +71,87 @@ body > div {
           }
           button:active,
           .active {
-            background-color: red;
-          }
-          .custom {
-            background-color: $very-light-grayish-cyan;
-            color: $dark-grayish-cyan;
-            font-size: 1.2rem;
-            text-align: right;
+            background-color: $strong-cyan;
+            color: $very-dark-cyan;
           }
         }
-        &__label {
-          display: block;
-
-          color: $dark-grayish-cyan;
-          font-size: 1.4rem;
-          margin-bottom: 0.2rem;
-        }
-        input {
-          width: 100%;
-          outline: none;
-          // outline: 1px solid red;
-          border: none;
+        .custom {
           background-color: $very-light-grayish-cyan;
-          padding: 1rem;
-          font-family: $space-mono;
+          color: $dark-grayish-cyan;
+          font-size: 1.2rem;
           text-align: right;
         }
       }
-    }
-    .main__second {
-      border-radius: 12px;
-      margin: 1.8rem;
-      padding: 2rem;
-      width: 45%;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background-color: $very-dark-cyan;
-      &__container {
-        margin-bottom: 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        column-gap: 5rem;
-        color: $very-light-grayish-cyan;
-        .tip-info-box {
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          p:nth-of-type(1) {
-            font-size: 2rem;
-          }
-          p:nth-of-type(2) {
-            color: $dark-grayish-cyan;
-            font-size: 1.2rem;
-          }
-        }
-        .tip-amount-and-total {
-          height: 100%;
-          font-size: 3rem;
-          color: $strong-cyan;
-        }
+      &__label {
+        display: block;
+
+        color: $dark-grayish-cyan;
+        font-size: 1.4rem;
+        margin-bottom: 0.2rem;
       }
-      button {
-        display: inline-block;
-        // margin-top: 4rem;
-        // margin-bottom: 2rem;
+      input {
         width: 100%;
+        outline: none;
+        // outline: 1px solid red;
         border: none;
-        background-color: $strong-cyan;
+        background-color: $very-light-grayish-cyan;
+        padding: 1rem;
         font-family: $space-mono;
-        padding: 1.5rem 0;
-        border-radius: 3px;
-        color: $very-dark-cyan;
-        font-weight: 700;
-        cursor: pointer;
+        text-align: right;
       }
     }
   }
-}
-
-// Functionality-related styles
-.selected-tip {
-  background-color: $strong-cyan;
-  color: $very-dark-cyan;
+  .main__second {
+    border-radius: 12px;
+    margin: 1.8rem;
+    padding: 2rem;
+    width: 45%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $very-dark-cyan;
+    &__container {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 5rem;
+      color: $very-light-grayish-cyan;
+      .tip-info-box {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        p:nth-of-type(1) {
+          font-size: 2rem;
+        }
+        p:nth-of-type(2) {
+          color: $dark-grayish-cyan;
+          font-size: 1.2rem;
+        }
+      }
+      .tip-amount-and-total {
+        height: 100%;
+        font-size: 3rem;
+        color: $strong-cyan;
+      }
+    }
+    button {
+      display: inline-block;
+      // margin-top: 4rem;
+      // margin-bottom: 2rem;
+      width: 100%;
+      border: none;
+      background-color: $strong-cyan;
+      font-family: $space-mono;
+      padding: 1.5rem 0;
+      border-radius: 3px;
+      color: $very-dark-cyan;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
 }
 
 // Footer
