@@ -99,27 +99,29 @@ function calculate() {
 function styleResetBtn() {
   if (!bill && !people && !customTip && !fixedTip) {
     resetBtn.style.backgroundColor = 'hsl(180, 68%, 24%)';
-    resetBtn.style.color = 'hsl(186, 14%, 43%)';
   } else {
     resetBtn.style.backgroundColor = ' hsl(172, 67%, 45%)';
-    resetBtn.style.color = 'hsl(183, 100%, 15%)';
 
-    resetBtn.addEventListener('mouseenter', () => {
-      resetBtn.style.backgroundColor = 'hsl(185, 41%, 84%)';
-    });
-    resetBtn.addEventListener('mouseleave', () => {
-      // On mouseleave, you either have clicked reset or not.
-      // if clicked, then bill === "", and bgColor
-      bill === ''
-        ? (resetBtn.style.color = 'hsl(183, 100%, 15%)')
-        : (resetBtn.style.backgroundColor = 'hsl(172, 67%, 45%)');
-    });
+    // Mouseenter and mouseleave color change should only work when a value has changed
+    setResetBtnHoverStyles();
   }
 }
+function setResetBtnHoverStyles() {
+  resetBtn.addEventListener('mouseenter', () => {
+    resetBtn.style.backgroundColor = 'hsl(185, 41%, 84%)';
+  });
+  resetBtn.addEventListener('mouseleave', () => {
+    // On mouseleave, you either have clicked reset or not.
+    // if clicked, then bill === "", and bgColor is back at original.
+    // if not clicked, bgColor is back at 'unclicked' state.
+    bill === ''
+      ? (resetBtn.style.backgroundColor = 'hsl(180, 68%, 24%)')
+      : (resetBtn.style.backgroundColor = 'hsl(172, 67%, 45%)');
+  });
+}
+
 resetBtn.addEventListener('click', reset);
 function reset() {
-  // resetBtn.style.backgroundColor = 'hsl(185, 41%, 84%)';
-
   //RESETTING BOTH THE VARIABLES AND DOM
 
   tipPerPerson.innerHTML = '00.00';
@@ -134,7 +136,7 @@ function reset() {
   numOfPeopleInput.style.outline = 'none';
   errorMsg.style.display = 'none';
 
-  resetBtn.style.backgroundColor = 'hsl(180, 68%, 24%)';
+  setResetBtnHoverStyles();
 }
 
 // reset btn
