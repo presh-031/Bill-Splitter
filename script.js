@@ -4,11 +4,17 @@ const customTipInput = document.querySelector('.custom');
 const numOfPeopleInput = document.querySelector('#num-of-people');
 const billInput = document.querySelector('#bill');
 const tipsPercentageBtns = document.querySelectorAll('.tips-percentage');
+const resetBtn = document.querySelector('.reset');
+
+let tipPerPerson = document.querySelector('.tip-per-person');
+let totalPerPerson = document.querySelector('.total-per-person');
 
 let bill = 0;
 let people = 0;
 let customTip = '';
 let fixedTip = '';
+
+styleResetBtn();
 
 billInput.addEventListener('input', getBillValue);
 function getBillValue() {
@@ -33,6 +39,7 @@ customTipInput.addEventListener('input', getCustomTipPercentage);
 function getCustomTipPercentage() {
   customTip = customTipInput.value;
   fixedTip = '';
+
   tipsPercentageBtns.forEach(btn => btn.classList.remove('active'));
 
   calculate();
@@ -53,9 +60,6 @@ tipsPercentageBtns.forEach(btn => {
 });
 
 function calculate() {
-  let tipPerPerson = document.querySelector('.tip-per-person');
-  let totalPerPerson = document.querySelector('.total-per-person');
-
   // console.log(typeof bill);
   // console.log(typeof customTip);
   // console.log(typeof people);
@@ -72,7 +76,32 @@ function calculate() {
       +people
     ).toFixed(2);
   }
+
+  styleResetBtn();
 }
 
-// When reset is clicked, all values should return to initial states
-// validation
+////// Reset btn
+function styleResetBtn() {
+  if (!bill || !people || !customTip || !fixedTip) {
+    resetBtn.style.backgroundColor = 'hsl(180, 68%, 24%)';
+    resetBtn.style.color = 'hsl(186, 14%, 43%)';
+  } else {
+    resetBtn.style.backgroundColor = ' hsl(172, 67%, 45%)';
+  }
+}
+resetBtn.addEventListener('click', reset);
+function reset() {
+  resetBtn.style.backgroundColor = 'hsl(185, 41%, 84%)';
+
+  //RESETTING BOTH THE VARIABLES AND DOM
+
+  tipPerPerson.innerHTML = '00.00';
+  totalPerPerson.innerHTML = '00.00';
+
+  bill = billInput.value = '';
+  customTip = customTipInput.value = '';
+  people = numOfPeopleInput.value = '';
+  fixedTip = '';
+
+  tipsPercentageBtns.forEach(btn => btn.classList.remove('active'));
+}

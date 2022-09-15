@@ -72,9 +72,8 @@ body > div {
             cursor: pointer;
           }
           button:hover {
-            background-color: $strong-cyan;
-            opacity: 0.5;
             color: $very-dark-cyan;
+            background-color: $light-grayish-cyan;
           }
           button:active,
           .active {
@@ -153,17 +152,19 @@ body > div {
     }
     button {
       display: inline-block;
-      // margin-top: 4rem;
-      // margin-bottom: 2rem;
       width: 100%;
       border: none;
-      // background-color: $strong-cyan;
+      // background-color: hsl(180, 68%, 24%);
+      // color: $dark-grayish-cyan;
       font-family: $space-mono;
       padding: 1.5rem 0;
       border-radius: 3px;
-      color: $very-dark-cyan;
+      // color: $very-dark-cyan;
       font-weight: 700;
       cursor: pointer;
+    }
+    button:active {
+      background-color: $light-grayish-cyan;
     }
   }
 }
