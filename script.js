@@ -21,6 +21,9 @@ billInput.addEventListener('input', getBillValue);
 function getBillValue() {
   bill = billInput.value;
 
+  // remove outline from numOfPeopleInput
+  numOfPeopleInput.style.outline = 'none';
+
   calculate();
 }
 
@@ -28,17 +31,16 @@ numOfPeopleInput.addEventListener('input', getNumOfPeople);
 function getNumOfPeople() {
   people = numOfPeopleInput.value;
   // console.log(typeof people);
-  numOfPeopleInput.style.outline = '1px solid hsl(172, 67%, 45%)'; //'none'; //'1px solid hsl(172, 67%, 45%)'
 
   if (+people === 0) {
     errorMsg.style.display = 'block';
     numOfPeopleInput.style.outline = '1px solid rgb(234, 105, 105)';
   } else {
-    // if the input is valid, the error message should be gone and the input field should be outlined normally when focused and no outline if not focused anymore.
+    // if the input is valid, the error message should be gone and the input field should be outlined
+    //  Outline is removed when user focuses on anything else
     errorMsg.style.display = 'none';
-    if (numOfPeopleInput.focused) {
-      numOfPeopleInput.style.outline = '1px solid hsl(172, 67%, 45%)'; //'none'; //'1px solid hsl(172, 67%, 45%)'
-    }
+    numOfPeopleInput.style.outline = '1px solid hsl(172, 67%, 45%)'; //'none'; //'1px solid hsl(172, 67%, 45%)'
+
     calculate();
   }
 }
@@ -49,6 +51,9 @@ function getCustomTipPercentage() {
   fixedTip = '';
 
   tipsPercentageBtns.forEach(btn => btn.classList.remove('active'));
+
+  // remove outline from numOfPeopleInput
+  numOfPeopleInput.style.outline = 'none';
 
   calculate();
 }
@@ -63,6 +68,8 @@ tipsPercentageBtns.forEach(btn => {
     tipsPercentageBtns.forEach(btn => btn.classList.remove('active'));
     btn.classList.add('active');
 
+    // remove outline from numOfPeopleInput
+    numOfPeopleInput.style.outline = 'none';
     calculate();
   });
 });
@@ -90,16 +97,17 @@ function calculate() {
 
 ////// Reset btn
 function styleResetBtn() {
-  if (!bill || !people || !customTip || !fixedTip) {
+  if (!bill && !people && !customTip && !fixedTip) {
     resetBtn.style.backgroundColor = 'hsl(180, 68%, 24%)';
     resetBtn.style.color = 'hsl(186, 14%, 43%)';
   } else {
     resetBtn.style.backgroundColor = ' hsl(172, 67%, 45%)';
+    resetBtn.style.color = 'hsl(183, 100%, 15%)';
   }
 }
 resetBtn.addEventListener('click', reset);
 function reset() {
-  resetBtn.style.backgroundColor = 'hsl(185, 41%, 84%)';
+  // resetBtn.style.backgroundColor = 'hsl(185, 41%, 84%)';
 
   //RESETTING BOTH THE VARIABLES AND DOM
 
@@ -112,7 +120,13 @@ function reset() {
   fixedTip = '';
 
   tipsPercentageBtns.forEach(btn => btn.classList.remove('active'));
+  numOfPeopleInput.style.outline = 'none';
+  errorMsg.style.display = 'none';
+
+  if (!bill || !people || !customTip || !fixedTip) {
+    // resetBtn.style.backgroundColor = 'hsl(180, 68%, 24%)';
+  }
 }
-// error-msg
+// reset btn
 // readme
 // hosting

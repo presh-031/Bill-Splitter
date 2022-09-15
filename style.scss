@@ -169,7 +169,8 @@ body > div {
       font-weight: 700;
       cursor: pointer;
     }
-    button:active {
+    button:hover {
+      outline: 1px solid red;
       background-color: $light-grayish-cyan;
     }
   }
