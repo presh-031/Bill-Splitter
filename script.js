@@ -5,6 +5,7 @@ const numOfPeopleInput = document.querySelector('#num-of-people');
 const billInput = document.querySelector('#bill');
 const tipsPercentageBtns = document.querySelectorAll('.tips-percentage');
 const resetBtn = document.querySelector('.reset');
+const errorMsg = document.querySelector('.error-msg');
 
 let tipPerPerson = document.querySelector('.tip-per-person');
 let totalPerPerson = document.querySelector('.total-per-person');
@@ -27,10 +28,17 @@ numOfPeopleInput.addEventListener('input', getNumOfPeople);
 function getNumOfPeople() {
   people = numOfPeopleInput.value;
   // console.log(typeof people);
+  numOfPeopleInput.style.outline = '1px solid hsl(172, 67%, 45%)'; //'none'; //'1px solid hsl(172, 67%, 45%)'
 
-  if (people === '0') {
-    alert('cant be zero');
+  if (+people === 0) {
+    errorMsg.style.display = 'block';
+    numOfPeopleInput.style.outline = '1px solid rgb(234, 105, 105)';
   } else {
+    // if the input is valid, the error message should be gone and the input field should be outlined normally when focused and no outline if not focused anymore.
+    errorMsg.style.display = 'none';
+    if (numOfPeopleInput.focused) {
+      numOfPeopleInput.style.outline = '1px solid hsl(172, 67%, 45%)'; //'none'; //'1px solid hsl(172, 67%, 45%)'
+    }
     calculate();
   }
 }
@@ -105,3 +113,6 @@ function reset() {
 
   tipsPercentageBtns.forEach(btn => btn.classList.remove('active'));
 }
+// error-msg
+// readme
+// hosting

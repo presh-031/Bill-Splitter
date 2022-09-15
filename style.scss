@@ -93,6 +93,12 @@ body > div {
           color: $dark-grayish-cyan;
           font-size: 1.4rem;
           margin-bottom: 0.2rem;
+          display: flex;
+          justify-content: space-between;
+          p:last-of-type {
+            color: rgb(234, 105, 105);
+            display: none;
+          }
         }
         input {
           width: 100%;
