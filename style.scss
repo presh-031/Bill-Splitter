@@ -1,4 +1,5 @@
 @import 'config';
+
 // Desktop-first styles
 *,
 *::after,
@@ -10,15 +11,8 @@
 :root {
   font-size: 62.5%;
 }
-html {
-  // footer support
-  // position: relative;
-  // min-height: 100%;
-}
 body {
   background-color: $light-grayish-cyan;
-  // footer support
-  // margin-bottom: 100px;
 }
 body > div {
   display: grid;
@@ -26,7 +20,6 @@ body > div {
   place-items: center;
   font-family: $space-mono;
   font-weight: 700;
-  // border: 1px solid red;
 }
 .overall {
   display: flex;
@@ -39,7 +32,6 @@ body > div {
     width: 9rem;
     text-align: center;
     word-wrap: break-word;
-
     line-height: 4rem;
     letter-spacing: 0.3rem;
     font-size: 3rem;
@@ -60,7 +52,6 @@ body > div {
         &__btns-container {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          // gap: 1rem 5%;
           gap: 1rem 2rem;
           button {
             border: none;
@@ -167,8 +158,6 @@ body > div {
       cursor: pointer;
       color: hsl(183, 100%, 15%);
     }
-    button:hover {
-    }
   }
 }
 
@@ -255,8 +244,6 @@ footer {
             color: $dark-grayish-cyan;
             font-size: 1.2rem;
           }
-        }
-        .tip-amount-and-total {
         }
       }
       button {
