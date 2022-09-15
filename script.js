@@ -103,6 +103,17 @@ function styleResetBtn() {
   } else {
     resetBtn.style.backgroundColor = ' hsl(172, 67%, 45%)';
     resetBtn.style.color = 'hsl(183, 100%, 15%)';
+
+    resetBtn.addEventListener('mouseenter', () => {
+      resetBtn.style.backgroundColor = 'hsl(185, 41%, 84%)';
+    });
+    resetBtn.addEventListener('mouseleave', () => {
+      // On mouseleave, you either have clicked reset or not.
+      // if clicked, then bill === "", and bgColor
+      bill === ''
+        ? (resetBtn.style.color = 'hsl(183, 100%, 15%)')
+        : (resetBtn.style.backgroundColor = 'hsl(172, 67%, 45%)');
+    });
   }
 }
 resetBtn.addEventListener('click', reset);
@@ -123,10 +134,9 @@ function reset() {
   numOfPeopleInput.style.outline = 'none';
   errorMsg.style.display = 'none';
 
-  if (!bill || !people || !customTip || !fixedTip) {
-    // resetBtn.style.backgroundColor = 'hsl(180, 68%, 24%)';
-  }
+  resetBtn.style.backgroundColor = 'hsl(180, 68%, 24%)';
 }
+
 // reset btn
 // readme
 // hosting

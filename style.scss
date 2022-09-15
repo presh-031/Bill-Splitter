@@ -160,18 +160,13 @@ body > div {
       display: inline-block;
       width: 100%;
       border: none;
-      // background-color: hsl(180, 68%, 24%);
-      // color: $dark-grayish-cyan;
       font-family: $space-mono;
       padding: 1.5rem 0;
       border-radius: 3px;
-      // color: $very-dark-cyan;
       font-weight: 700;
       cursor: pointer;
     }
     button:hover {
-      outline: 1px solid red;
-      background-color: $light-grayish-cyan;
     }
   }
 }
