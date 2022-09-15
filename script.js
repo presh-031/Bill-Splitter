@@ -75,11 +75,6 @@ tipsPercentageBtns.forEach(btn => {
 });
 
 function calculate() {
-  // console.log(typeof bill);
-  // console.log(typeof customTip);
-  // console.log(typeof people);
-  // console.log(typeof fixedTip);
-
   const tip = fixedTip ? fixedTip : customTip;
 
   // console.log(tip);
@@ -96,6 +91,7 @@ function calculate() {
 }
 
 ////// Reset btn
+// styles
 function styleResetBtn() {
   if (!bill && !people && !customTip && !fixedTip) {
     resetBtn.style.backgroundColor = 'hsl(180, 68%, 24%)';
@@ -119,7 +115,7 @@ function setResetBtnHoverStyles() {
       : (resetBtn.style.backgroundColor = 'hsl(172, 67%, 45%)');
   });
 }
-
+// functionality
 resetBtn.addEventListener('click', reset);
 function reset() {
   //RESETTING BOTH THE VARIABLES AND DOM
@@ -135,10 +131,7 @@ function reset() {
   tipsPercentageBtns.forEach(btn => btn.classList.remove('active'));
   numOfPeopleInput.style.outline = 'none';
   errorMsg.style.display = 'none';
-
-  setResetBtnHoverStyles();
 }
 
-// reset btn
 // readme
 // hosting
